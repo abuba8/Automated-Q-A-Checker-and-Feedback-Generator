@@ -1,0 +1,62 @@
+{
+  "name": "automated_frontend",
+  "version": "0.1.0",
+  "private": true,
+  "dependencies": {
+    "@ant-design/colors": "^4.0.0",
+    "@ant-design/icons": "^4.0.6",
+    "@grapecity/spread-excelio": "^13.0.7",
+    "@material-ui/core": "^4.9.10",
+    "@react-pdf/renderer": "^1.6.8",
+    "antd": "^3.26.15",
+    "axios": "^0.19.2",
+    "bizcharts": "^3.5.8",
+    "file-saver": "^2.0.2",
+    "jspdf": "^1.5.3",
+    "local-storage": "^2.0.0",
+    "node-sass": "^4.14.1",
+    "pdfmake": "^0.1.65",
+    "rc-tween-one": "^2.7.3",
+    "react": "^16.13.1",
+    "react-bootstrap": "^1.5.2",
+    "react-csv": "^1.1.2",
+    "react-dom": "^16.13.1",
+    "react-files": "^3.0.0-alpha.1",
+    "react-highlight-words": "^0.16.0",
+    "react-html-table-to-excel": "^2.0.0",
+    "react-icons": "^2.2.7",
+    "react-json-to-csv": "^1.0.4",
+    "react-minimal-pie-chart": "^6.0.1",
+    "react-notify-toast": "^0.5.1",
+    "react-redux": "^7.2.0",
+    "react-route-guard": "^1.0.7",
+    "react-router-dom": "^5.1.2",
+    "react-router-guard": "^2.3.0",
+    "react-router-redux": "^4.0.8",
+    "react-scripts": "3.2.0",
+    "react-testing-library": "^8.0.1",
+    "redux": "^4.0.5",
+    "redux-thunk": "^2.3.0"
+  },
+  "scripts": {
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "jest --watchAll",
+    "eject": "react-scripts eject"
+  },
+  "eslintConfig": {
+    "extends": "react-app"
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  }
+}
