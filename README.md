@@ -4,7 +4,7 @@
 
 ## Dataset Overview
 Data is in a csv format. It will consist of two columns; questions and answers provided by lecturer. There is no limit of questions & answers asked in a quiz, it is totally up to the lecturer. 
-![](images/Picture2.png)
+![](images/Picture2.PNG)
 
 ## Embedding Models
 We used three different embeddings to find the similarity score between the answer given and original answer, Bag of words, Word2Vec and Glove.
@@ -31,3 +31,21 @@ Word2vec embeddings are based on training a shallow feedforward neural network w
 
 #### Differences in the properties of word2vec and glove:
 The two models differ in the way they are trained, and hence lead to word vectors with subtly different properties. Glove model is based on leveraging global word to word co-occurrence counts leveraging the entire corpus. Word2vec on the other hand leverages co-occurrence within local context (neighboring words).
+
+## Accuracy
+![](images/Picture3.PNG)
+The above figure shows the accuracy/arithmetic mean for each embedding model. As, there were nine questions asked in the quiz. So, the above graph shows the mean of the similarity score for each answer. Which performed the best is defined in the section below.
+
+## Explanation
+Let’s take an example, by picking up a single question from the quiz and see how each embedding model worked in predicting the question and its answer.
+Question: In Biology, what is the Nucleus and what does it do?
+Original Answer: A nucleus is a membrane-bound that contains the cell’s chromosomes. Pores in the nuclear membrane allow for the passage of molecules in and out of the molecules.
+Now, Glove and Bow made many wrong assumptions while predicting the question. According to Glove model the asked question was “What does the saying don’t cry wolf imply?” meanwhile Bag of words predicted that the asked question was “In football, what nickname does Jose Mourinho refer to himself as, and why?”. Therefore, the answered question by the student fetched from the file was also wrong. Glove model predicted correct questions by 22% (2/9 questions), Bag of word predicted by 44% (4/9 questions). Therefore, both these models are not suitable for our desired product. (Note: the main focus was to compare the asked question with the question in original quiz file, if matched correctly, then calculate the similarity score between the answers. Therefore, we can only move forward if the questions are correctly matched). Whereas Word2Vec predicted all the questions perfectly, 100%. So, we used the Word2Vec for calculating the similarity score between each question. The Arithmetic Mean or percentage of similarity score for Word2Vec was 90.6%. The aim was to find the similarity score and put some limit for correct and wrong answers. So, 100-65 was labelled as correct, 35-65 was labelled as needs improvement and less than 35 was labelled as wrong answer. So, this is how we created an automated checker and generates a feedback according to the marks acquired. 
+
+## Application 
+1. Login/Register
+2. Upload the files. Test file and Zip file of student's answer. Files are stored in DB.
+3. Request sent to backend
+4. Similarity core calculated in real time.
+5. Response sent back to front-end and display the results.
+
