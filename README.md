@@ -44,6 +44,9 @@ Original Answer: A nucleus is a membrane-bound that contains the cell’s chromo
 Now, Glove and Bow made many wrong assumptions while predicting the question. According to Glove model the asked question was “What does the saying don’t cry wolf imply?” meanwhile Bag of words predicted that the asked question was “In football, what nickname does Jose Mourinho refer to himself as, and why?”. Therefore, the answered question by the student fetched from the file was also wrong. Glove model predicted correct questions by 22% (2/9 questions), Bag of word predicted by 44% (4/9 questions). Therefore, both these models are not suitable for our desired product. (Note: the main focus was to compare the asked question with the question in original quiz file, if matched correctly, then calculate the similarity score between the answers. Therefore, we can only move forward if the questions are correctly matched). Whereas Word2Vec predicted all the questions perfectly, 100%. So, we used the Word2Vec for calculating the similarity score between each question. The Arithmetic Mean or percentage of similarity score for Word2Vec was 90.6%. The aim was to find the similarity score and put some limit for correct and wrong answers. So, 100-65 was labelled as correct, 35-65 was labelled as needs improvement and less than 35 was labelled as wrong answer. So, this is how we created an automated checker and generates a feedback according to the marks acquired. 
 
 ## Application 
+Frontend: Reactjs
+Backend: Django
+DB: sqlite3
 1. Login/Register
 2. Upload the files. Test file and Zip file of student's answer. Files are stored in DB.
 3. Request sent to backend
