@@ -49,4 +49,3 @@ Now, Glove and Bow made many wrong assumptions while predicting the question. Ac
 3. Request sent to backend
 4. Similarity core calculated in real time.
 5. Response sent back to front-end and display the results.
-
